@@ -1,0 +1,34 @@
+.button-lang-container {
+	display: flex;
+	position: relative;
+	flex-direction: column;
+	position: relative;
+	padding: 8px 12px;
+	min-width: 80px;
+	background-color: #ffffff;
+	box-shadow: inset 3px 3px 3px rgba(0, 0, 0, 0.3);
+	border-radius: 10px;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+
+	.button-lang-selected {
+		display: flex;
+		flex-direction: row;
+		img {
+			margin-right: 5px;
+		}
+	}
+	.button-lang-selection {
+		position: absolute;
+		top: calc(100% + 3px);
+		.button-lang-option {
+			display: flex;
+			flex-direction: row;
+			margin-bottom: 3px;
+			img {
+				margin-right: 5px;
+			}
+		}
+	}
+}
