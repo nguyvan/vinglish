@@ -29,7 +29,18 @@ export const Navbar = () => {
 				<nav>
 					<ol>
 						{valuesNavbar.map((value) => (
-							<li key={value.index}>{value.label}</li>
+							<li
+								key={value.index}
+								onClick={() => {
+									if (value.index === 1) {
+										document
+											.getElementById("about")
+											?.scrollIntoView();
+									}
+								}}
+							>
+								{value.label}
+							</li>
 						))}
 						<li>
 							<img src={searchIcon} alt="...loading" />

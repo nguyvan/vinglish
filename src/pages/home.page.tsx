@@ -1,9 +1,12 @@
-import { Navbar } from "../components/navbar/navbar.component";
+import { Layout } from "../components/layout/layout.component";
+import { About } from "./components/about/about.component";
+import { Intro } from "./components/intro/intro.component";
 
 export const HomePage = () => {
 	return (
-		<div>
-			<Navbar />
-		</div>
+		<Layout>
+			<Intro />
+			<About />
+		</Layout>
 	);
 };

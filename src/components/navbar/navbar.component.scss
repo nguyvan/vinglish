@@ -6,6 +6,7 @@
 	flex-direction: row;
 	align-items: flex-end;
 	background-color: rgba(0, 0, 0, 0.1);
+	z-index: 9999;
 
 	#logo-image {
 		position: absolute;
@@ -33,6 +34,9 @@
 					color: white;
 					&:last-child {
 						margin-right: 0px;
+					}
+					&:last-child:after {
+						display: none;
 					}
 					&:after {
 						display: block;
