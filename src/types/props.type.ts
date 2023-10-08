@@ -20,3 +20,15 @@ export interface AboutValuesProps {
 	content: string;
 	button: string;
 }
+
+export interface MenuValuesProps {
+	title: string;
+	content: {
+		category: string;
+		product: {
+			name: string;
+			image: string;
+			price: string;
+		}[];
+	}[];
+}
