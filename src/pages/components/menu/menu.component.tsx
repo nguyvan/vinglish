@@ -12,7 +12,7 @@ export const Menu = () => {
 	const [menuValues, setMenuValues] = React.useState<MenuValuesProps>();
 	const [categories, setCategories] = React.useState<string[]>();
 	const [selectedCategory, setSelectedCategory] = React.useState(0);
-	const [direction, setDirection] = React.useState("");
+	const [direction, setDirection] = React.useState<string>("");
 	const selectedItems = React.useMemo(() => {
 		if (menuValues && categories) {
 			return menuValues.content.find(

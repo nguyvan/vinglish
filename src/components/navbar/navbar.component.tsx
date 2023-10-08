@@ -15,7 +15,7 @@ export const Navbar = () => {
 
 	const scrollHandler = () => {
 		const position = window.scrollY;
-		setIsScroll(position > (window.innerWidth * 664) / 1440);
+		setIsScroll(position > (window.innerWidth * 664) / 1440 - 60);
 	};
 
 	React.useEffect(() => {

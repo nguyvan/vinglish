@@ -55,3 +55,12 @@ export interface WhyValuesProps {
 	}[];
 	button: string;
 }
+
+export interface FeedbackValuesProps {
+	title: string;
+	content: {
+		avatar: string;
+		name: string;
+		feedback: string;
+	}[];
+}

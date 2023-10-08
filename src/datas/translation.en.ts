@@ -239,19 +239,19 @@ export const whatStudentsSay = {
 	content: [
 		{
 			avatar: avatar1,
-			name: "@Trần Bảo Yến",
+			name: "Trần Bảo Yến",
 			feedback:
 				"Mình đang tìm kiếm môi trường nói tiếng Anh để cải thiện phản xạ tiếng Anh, may mắn được bạn bè giới thiệu dịch vụ “Cà Phê Tiếng Anh” tại Vinglish. Mỗi cuối tuần mình lại đến quán, để được nói tiếng Anh và thư giãn thưởng thức cà phê. Các chủ đề nói ở đây rất đa dạng, mọi người ai cũng tự nhiên khiến mình cảm thấy việc học tiếng Anh dễ dàng hơn rất nhiều...",
 		},
 		{
 			avatar: avatar2,
-			name: "@Phạm Văn Linh",
+			name: "Phạm Văn Linh",
 			feedback:
 				"Mình vô tình biết đến dịch vụ “Cà Phê Tiếng Anh”. Sau khi trải nghiệm dịch vụ thì mình khẳng định sẽ ghé lại quán nhiều lần nữa. Không chỉ giao tiếp tiếng Anh đơn thuần, các bạn Huấn luyện viên tiếng Anh ở đây cũng giúp mình sửa những lỗi phát âm. Mọi người rất tự nhiên và thoải mái nên cũng làm mình tự tin hơn. Mình sẽ giới thiệu cho bạn bè đến đây để cải thiện tiếng Anh.",
 		},
 		{
 			avatar: avatar3,
-			name: "@Lê Yến Nhi",
+			name: "Lê Yến Nhi",
 			feedback:
 				"Mình đến quán để uống cà phê và vô tình biết đến dịch vụ “Cà Phê Tiếng Anh”. Ngoài sự kỳ vọng, mình đã có một buổi học tiếng Anh vô cùng thú vị. Bạn huấn luyện viên chia sẻ rất nhiều kiến thức bổ ích và cho mình rất nhiều tips để cải thiện tiếng Anh. Về không gian rất riêng tư, ở đây mọi người ai cũng học tập, làm việc làm mình rất có động lực.",
 		},
