@@ -227,7 +227,7 @@ export const whyVinglish = {
 			text: "Lớp học quy mô nhỏ sẽ đảm bảo học viên được tương tác và theo sát tận tình trong suốt quá trình học.",
 		},
 		{
-			label: "Lớp Học Hiện Đạ:",
+			label: "Lớp Học Hiện Đại:",
 			text: "Lớp học được trang bị đầy đủ các trang thiết bị hiện đại, nâng cao trải nghiệm học tập.",
 		},
 	],

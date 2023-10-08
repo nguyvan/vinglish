@@ -30,13 +30,13 @@ export const Footer = () => {
 			<div className="left-part-container">
 				<img src={logo} className="logo" alt="...loading" />
 				<div className="info-container">
-					<span className="label">{footerValues.adress.label}</span>
+					<span className="label">{footerValues.adress.label}:</span>
 					<span className="content-label">
 						{footerValues.adress.content}
 					</span>
 				</div>
 				<div className="info-container">
-					<span className="label">{footerValues.hotline.label}</span>
+					<span className="label">{footerValues.hotline.label}:</span>
 					<span className="content-label">
 						{footerValues.hotline.content}
 					</span>
