@@ -1,5 +1,5 @@
 import React from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, Variants } from "framer-motion";
 import "./menu.component.scss";
 import { LangContextProps } from "../../../types/context.type";
 import { LangContext } from "../../../contexts/lang.context";
@@ -21,7 +21,7 @@ export const Menu = () => {
 		}
 	}, [menuValues, categories, selectedCategory]);
 
-	const slideVariants = {
+	const slideVariants: Variants = {
 		hiddenRight: {
 			x: "100%",
 			opacity: 0,
@@ -104,7 +104,7 @@ export const Menu = () => {
 				</div>
 				<AnimatePresence>
 					{selectedItems ? (
-						selectedItems.map((item) => (
+						selectedItems.map((item, index) => (
 							<motion.div
 								className="carousel-item"
 								key={item.name}
@@ -115,7 +115,16 @@ export const Menu = () => {
 								}
 								animate="visible"
 								exit="exit"
-								variants={slideVariants}
+								variants={{
+									...slideVariants,
+									visible: {
+										x: "0",
+										opacity: 1,
+										transition: {
+											duration: 1 + 0.25 * index,
+										},
+									},
+								}}
 							>
 								<img src={item.image} alt="...loading" />
 								<span className="name-item">{item.name}</span>
