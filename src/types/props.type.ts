@@ -8,3 +8,15 @@ export interface NavbarValuesProps {
 	label: string;
 	index: number;
 }
+
+export interface IntroValuesProps {
+	title: string;
+	content: string;
+	button: string;
+}
+
+export interface AboutValuesProps {
+	title: string;
+	content: string;
+	button: string;
+}

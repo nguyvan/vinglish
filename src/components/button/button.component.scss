@@ -18,16 +18,34 @@
 		img {
 			margin-right: 5px;
 		}
+		span {
+			font-family: "Be Vietnam Pro";
+			font-style: normal;
+			font-weight: 600;
+			font-size: 15px;
+		}
 	}
 	.button-lang-selection {
 		position: absolute;
 		top: calc(100% + 3px);
+		background-color: white;
+		padding: 5px 12px;
+		min-width: 72px;
 		.button-lang-option {
 			display: flex;
 			flex-direction: row;
-			margin-bottom: 3px;
+			margin-bottom: 5px;
+			&:last-child {
+				margin-bottom: 0px;
+			}
 			img {
 				margin-right: 5px;
+			}
+			span {
+				font-family: "Be Vietnam Pro";
+				font-style: normal;
+				font-weight: 600;
+				font-size: 15px;
 			}
 		}
 	}
