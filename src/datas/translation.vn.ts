@@ -288,7 +288,7 @@ export const footer = {
 	},
 	introduction: {
 		label: "Giới thiệu",
-		content: ["Thực đơn", "Tin tức", "Tuyển tụng", "Liên hệ"],
+		content: ["Thực đơn", "Tin tức", "Tuyển dụng", "Liên hệ"],
 	},
 	service: {
 		label: "Dịch vụ khác",
