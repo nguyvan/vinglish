@@ -41,3 +41,8 @@ export interface OfferValuesProps {
 	}[];
 	button: string;
 }
+
+export interface BannerValuesProps {
+	label: string;
+	highlight: string;
+}

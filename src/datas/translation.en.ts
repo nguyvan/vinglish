@@ -80,7 +80,7 @@ export const whatWeOfferCompnent = {
 	button: "Learn More",
 };
 
-export const Menu = {
+export const menu = {
 	title: "Menu",
 	content: [
 		{
@@ -206,7 +206,7 @@ export const Menu = {
 	],
 };
 
-export const BannerLabel = {
+export const bannerLabel = {
 	label: "Path To English Proficiency",
 	highlight: "Proficiency",
 };

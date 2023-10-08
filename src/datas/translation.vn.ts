@@ -80,7 +80,7 @@ export const whatWeOfferCompnent = {
 	button: "Xem Thêm",
 };
 
-export const Menu = {
+export const menu = {
 	title: "Menu",
 	content: [
 		{
@@ -206,9 +206,9 @@ export const Menu = {
 	],
 };
 
-export const BannerLabel = {
+export const bannerLabel = {
 	label: "lộ trình thông thạo tiếng anh",
-	hightlight: "thông thạo",
+	highlight: "thông thạo",
 };
 
 export const WhyVinglish = {

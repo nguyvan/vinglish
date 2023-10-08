@@ -1,4 +1,5 @@
 import React from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import "./menu.component.scss";
 import { LangContextProps } from "../../../types/context.type";
 import { LangContext } from "../../../contexts/lang.context";
@@ -11,6 +12,7 @@ export const Menu = () => {
 	const [menuValues, setMenuValues] = React.useState<MenuValuesProps>();
 	const [categories, setCategories] = React.useState<string[]>();
 	const [selectedCategory, setSelectedCategory] = React.useState(0);
+	const [direction, setDirection] = React.useState("");
 	const selectedItems = React.useMemo(() => {
 		if (menuValues && categories) {
 			return menuValues.content.find(
@@ -18,12 +20,37 @@ export const Menu = () => {
 			)?.product;
 		}
 	}, [menuValues, categories, selectedCategory]);
+
+	const slideVariants = {
+		hiddenRight: {
+			x: "100%",
+			opacity: 0,
+		},
+		hiddenLeft: {
+			x: "-100%",
+			opacity: 0,
+		},
+		visible: {
+			x: "0",
+			opacity: 1,
+			transition: {
+				duration: 1,
+			},
+		},
+		exit: {
+			display: "none",
+			transition: {
+				duration: 0.5,
+			},
+		},
+	};
+
 	React.useEffect(() => {
 		(async () => {
 			if (lang) {
 				const values: MenuValuesProps = (
 					await import(`../../../datas/translation.${lang}`)
-				).Menu;
+				).menu;
 				setMenuValues(values);
 				setCategories(values.content.map((v) => v.category));
 			}
@@ -53,23 +80,52 @@ export const Menu = () => {
 				</ol>
 			</div>
 			<div className="carousel">
-				<div className="prev-button">
+				<div
+					className="prev-button"
+					onClick={() => {
+						setDirection("left");
+						let prevCat = selectedCategory - 1;
+						prevCat = prevCat < 0 ? categories.length - 1 : prevCat;
+						setSelectedCategory(prevCat);
+					}}
+				>
 					<img src={previousArrow} alt="...loading" />
 				</div>
-				<div className="next-button">
+				<div
+					className="next-button"
+					onClick={() => {
+						setDirection("right");
+						let nextCat = selectedCategory + 1;
+						nextCat = nextCat === categories.length ? 0 : nextCat;
+						setSelectedCategory(nextCat);
+					}}
+				>
 					<img src={nextArrow} alt="...loading" />
 				</div>
-				{selectedItems ? (
-					selectedItems.map((item) => (
-						<div className="carousel-item" key={item.name}>
-							<img src={item.image} alt="...loading" />
-							<span className="name-item">{item.name}</span>
-							<span className="price-item">{item.price}</span>
-						</div>
-					))
-				) : (
-					<></>
-				)}
+				<AnimatePresence>
+					{selectedItems ? (
+						selectedItems.map((item) => (
+							<motion.div
+								className="carousel-item"
+								key={item.name}
+								initial={
+									direction === "right"
+										? "hiddenRight"
+										: "hiddenLeft"
+								}
+								animate="visible"
+								exit="exit"
+								variants={slideVariants}
+							>
+								<img src={item.image} alt="...loading" />
+								<span className="name-item">{item.name}</span>
+								<span className="price-item">{item.price}</span>
+							</motion.div>
+						))
+					) : (
+						<></>
+					)}
+				</AnimatePresence>
 			</div>
 		</div>
 	) : (
