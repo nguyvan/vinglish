@@ -10,7 +10,14 @@ export const Menu = () => {
 	const { lang } = React.useContext<LangContextProps>(LangContext);
 	const [menuValues, setMenuValues] = React.useState<MenuValuesProps>();
 	const [categories, setCategories] = React.useState<string[]>();
-	const [selectedCategory, selectCategory] = React.useState(0);
+	const [selectedCategory, setSelectedCategory] = React.useState(0);
+	const selectedItems = React.useMemo(() => {
+		if (menuValues && categories) {
+			return menuValues.content.find(
+				(value) => value.category === categories.at(selectedCategory!)
+			)?.product;
+		}
+	}, [menuValues, categories, selectedCategory]);
 	React.useEffect(() => {
 		(async () => {
 			if (lang) {
@@ -29,32 +36,40 @@ export const Menu = () => {
 				<h1>{menuValues.title}</h1>
 			</div>
 			<div className="menu-category-content">
-				<nav>
-					<ol>
-						{categories.map((val, ind) => {
-							if (selectedCategory === ind) {
-								return (
-									<li
-										className="selected-category"
-										key={ind}
-										onClick={() => selectCategory(ind)}
-									>
-										{val}
-									</li>
-								);
-							} else {
-								return (
-									<li
-										key={ind}
-										onClick={() => selectCategory(ind)}
-									>
-										{val}
-									</li>
-								);
+				<ol>
+					{categories.map((val, ind) => (
+						<li
+							className={
+								selectedCategory === ind
+									? "selected-category"
+									: ""
 							}
-						})}
-					</ol>
-				</nav>
+							key={ind}
+							onClick={() => setSelectedCategory(ind)}
+						>
+							{val}
+						</li>
+					))}
+				</ol>
+			</div>
+			<div className="carousel">
+				<div className="prev-button">
+					<img src={previousArrow} alt="...loading" />
+				</div>
+				<div className="next-button">
+					<img src={nextArrow} alt="...loading" />
+				</div>
+				{selectedItems ? (
+					selectedItems.map((item) => (
+						<div className="carousel-item" key={item.name}>
+							<img src={item.image} alt="...loading" />
+							<span className="name-item">{item.name}</span>
+							<span className="price-item">{item.price}</span>
+						</div>
+					))
+				) : (
+					<></>
+				)}
 			</div>
 		</div>
 	) : (

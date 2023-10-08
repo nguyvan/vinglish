@@ -32,3 +32,12 @@ export interface MenuValuesProps {
 		}[];
 	}[];
 }
+
+export interface OfferValuesProps {
+	title: string;
+	content: {
+		label: string;
+		index: number;
+	}[];
+	button: string;
+}
