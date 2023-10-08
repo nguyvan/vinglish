@@ -211,7 +211,7 @@ export const bannerLabel = {
 	highlight: "thông thạo",
 };
 
-export const WhyVinglish = {
+export const whyVinglish = {
 	title: "tại sao nên chọn vinglish",
 	content: [
 		{
@@ -234,7 +234,7 @@ export const WhyVinglish = {
 	button: "Xem Thêm",
 };
 
-export const WhatStudentsSay = {
+export const whatStudentsSay = {
 	title: "What Our Students Say?",
 	content: [
 		{

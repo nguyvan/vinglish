@@ -211,7 +211,7 @@ export const bannerLabel = {
 	highlight: "Proficiency",
 };
 
-export const WhyVinglish = {
+export const whyVinglish = {
 	title: "Why Choose Vinglish",
 	content: [
 		{
@@ -234,7 +234,7 @@ export const WhyVinglish = {
 	button: "Learn More",
 };
 
-export const WhatStudentsSay = {
+export const whatStudentsSay = {
 	title: "What Our Students Say?",
 	content: [
 		{

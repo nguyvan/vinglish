@@ -5,6 +5,7 @@ import { Banner3 } from "./components/banner3/banner3.component";
 import { Intro } from "./components/intro/intro.component";
 import { Menu } from "./components/menu/menu.component";
 import { Offer } from "./components/offer/offer.component";
+import { Why } from "./components/why/why.component";
 
 export const HomePage = () => {
 	return (
@@ -16,6 +17,7 @@ export const HomePage = () => {
 			<Banner2 />
 			<Menu />
 			<Banner3 />
+			<Why />
 		</Layout>
 	);
 };

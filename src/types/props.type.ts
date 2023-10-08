@@ -46,3 +46,12 @@ export interface BannerValuesProps {
 	label: string;
 	highlight: string;
 }
+
+export interface WhyValuesProps {
+	title: string;
+	content: {
+		label: string;
+		text: string;
+	}[];
+	button: string;
+}
