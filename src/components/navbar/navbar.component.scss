@@ -5,7 +5,7 @@
 	min-height: 60px;
 	flex-direction: row;
 	align-items: flex-end;
-	background-color: rgba(0, 0, 0, 0.1);
+	background-color: "transparent";
 	z-index: 9999;
 
 	#logo-image {
@@ -60,4 +60,9 @@
 		top: 50%;
 		transform: translate(0, -50%);
 	}
+}
+
+.navbar-container.scrolled {
+	background-color: #000 !important;
+	transition: background-color 200ms linear;
 }

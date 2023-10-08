@@ -2,7 +2,7 @@ import React from "react";
 import { LangContextProps } from "../../../types/context.type";
 import { LangContext } from "../../../contexts/lang.context";
 import { WhyValuesProps } from "../../../types/props.type";
-import whyImage from "../../../assets/images/why/why.jpg";
+import whyImage from "../../../assets/images/why/why.png";
 import arrow from "../../../assets/svg/right-arrow-orange.svg";
 import "./why.component.scss";
 

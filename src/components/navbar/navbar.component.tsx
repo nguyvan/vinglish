@@ -11,6 +11,12 @@ export const Navbar = () => {
 	const { lang } = React.useContext<LangContextProps>(LangContext);
 	const [valuesNavbar, setValuesNavbar] =
 		React.useState<NavbarValuesProps[]>();
+	const [isScroll, setIsScroll] = React.useState(false);
+
+	const scrollHandler = () => {
+		const position = window.scrollY;
+		setIsScroll(position > (window.innerWidth * 664) / 1440);
+	};
 
 	React.useEffect(() => {
 		(async () => {
@@ -22,8 +28,16 @@ export const Navbar = () => {
 		})();
 	}, [lang]);
 
+	React.useEffect(() => {
+		window.addEventListener("scroll", scrollHandler);
+	}, []);
+
 	return valuesNavbar ? (
-		<div className="navbar-container">
+		<div
+			className={
+				isScroll ? "navbar-container scrolled" : "navbar-container"
+			}
+		>
 			<img id="logo-image" src={logo} alt="...loading" />
 			<div className="navbar-content">
 				<nav>
