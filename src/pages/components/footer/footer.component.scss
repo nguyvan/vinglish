@@ -1,0 +1,130 @@
+#footer {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	padding-left: 10%;
+	padding-right: 10%;
+	background: linear-gradient(0deg, #1e1e1e, #1e1e1e), #1e1e1e;
+	padding-top: 3%;
+	padding-bottom: 3%;
+	position: relative;
+	.left-part-container {
+		height: 60%;
+		width: 40%;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		justify-content: space-between;
+	}
+	img.logo {
+		width: 50%;
+		object-fit: contain;
+	}
+	.info-container {
+		display: flex;
+		flex-direction: row;
+		margin-left: 4%;
+		align-items: flex-end;
+	}
+	span {
+		color: #fff;
+	}
+	.label {
+		font-family: "Be Vietnam Pro";
+		font-size: 12px;
+		font-weight: 700;
+		line-height: 19px;
+		letter-spacing: 0em;
+		margin-right: 5px;
+	}
+	.content-label {
+		font-family: "Be Vietnam Pro";
+		font-size: 10px;
+		font-weight: 400;
+		line-height: 16px;
+		letter-spacing: 0em;
+	}
+	.right-part-container {
+		height: 100%;
+		width: 20%;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		justify-content: space-between;
+	}
+	.intro-service-container {
+		width: 100%;
+		display: flex;
+		flex-direction: row;
+		align-items: flex-start;
+		justify-content: space-between;
+	}
+	.intro-service-content-container {
+		display: flex;
+		flex-direction: column;
+	}
+	.title {
+		font-family: "Be Vietnam Pro";
+		font-size: 15px;
+		font-weight: 800;
+		line-height: 19px;
+		letter-spacing: 0em;
+		padding-bottom: 5%;
+	}
+	.subtitle {
+		font-family: "Be Vietnam Pro";
+		font-size: 12px;
+		font-weight: 400;
+		line-height: 22px;
+		letter-spacing: 0em;
+		text-align: left;
+		padding-bottom: 1%;
+		&:last-child {
+			margin-bottom: 0px;
+		}
+	}
+	.follow-us-title {
+		font-family: "Be Vietnam Pro";
+		font-size: 15px;
+		font-weight: 800;
+		line-height: 19px;
+		letter-spacing: 0em;
+		text-align: left;
+	}
+	.follow-us-container {
+		width: 100%;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: space-between;
+		margin-top: 8%;
+	}
+}
+
+#copyright {
+	position: relative;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	background: linear-gradient(0deg, #454545, #454545), #1e1e1e;
+	padding-top: 0.5%;
+	padding-bottom: 0.5%;
+	span {
+		color: #fff;
+		font-family: "Be Vietnam Pro";
+		line-height: 19px;
+		letter-spacing: 0em;
+		font-size: 12px;
+		text-align: center;
+	}
+	.content {
+		font-style: italic;
+		font-weight: 600;
+	}
+	.label {
+		font-weight: 700;
+	}
+}

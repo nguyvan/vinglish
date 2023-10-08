@@ -275,3 +275,23 @@ export const whatStudentsSay = {
 		},
 	],
 };
+
+export const footer = {
+	adress: {
+		label: "Address",
+		content:
+			"1st Floor, 60/7-9 Ung Van Khiem, Ward 25, Binh Thanh District, Ho Chi Minh City",
+	},
+	hotline: {
+		label: "Hotline",
+		content: "0902608498",
+	},
+	introduction: {
+		label: "Introduction",
+		content: ["About Us", "Menu", "Latest News"],
+	},
+	service: {
+		label: "Service",
+		content: ["24/7 Coffee", "Meeting Room", "English Courses"],
+	},
+};

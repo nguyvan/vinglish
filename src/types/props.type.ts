@@ -64,3 +64,21 @@ export interface FeedbackValuesProps {
 		feedback: string;
 	}[];
 }
+export interface FooterValuesProps {
+	adress: {
+		label: string;
+		content: string;
+	};
+	hotline: {
+		label: string;
+		content: string;
+	};
+	introduction: {
+		label: string;
+		content: string[];
+	};
+	service: {
+		label: string;
+		content: string[];
+	};
+}

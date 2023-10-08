@@ -275,3 +275,23 @@ export const whatStudentsSay = {
 		},
 	],
 };
+
+export const footer = {
+	adress: {
+		label: "Địa chỉ",
+		content:
+			"Lầu 1, 60/7-9 Ung Văn Khiêm, Phường 25, Quận Bình Thạnh, TP. Hồ Chí Minh",
+	},
+	hotline: {
+		label: "Điện thoại",
+		content: "0902608498",
+	},
+	introduction: {
+		label: "Giới thiệu",
+		content: ["Thực đơn", "Tin tức", "Tuyển tụng", "Liên hệ"],
+	},
+	service: {
+		label: "Dịch vụ khác",
+		content: ["Cà phê 24/7", "Phòng họp tiện nghi", "Tiếng anh giao tiếp"],
+	},
+};
