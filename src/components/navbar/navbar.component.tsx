@@ -2,16 +2,19 @@ import React from "react";
 import { LangContextProps } from "../../types/context.type";
 import { LangContext } from "../../contexts/lang.context";
 import { NavbarValuesProps } from "../../types/props.type";
+import { ButtonLanguageSelect } from "../button/button.component";
+
 import "./navbar.component.scss";
 import logo from "../../assets/images/logo.png";
-import searchIcon from "../../assets/svg/search.svg";
-import { ButtonLanguageSelect } from "../button/button.component";
+import menuIcon from "../../assets/svg/menu-icon.svg";
+import { Sidebar } from "./sidebar/sidebar.component";
 
 export const Navbar = () => {
 	const { lang } = React.useContext<LangContextProps>(LangContext);
 	const [valuesNavbar, setValuesNavbar] =
 		React.useState<NavbarValuesProps[]>();
 	const [isScroll, setIsScroll] = React.useState(false);
+	const [selectedIndex, setSelectedIndex] = React.useState<number>();
 
 	const scrollHandler = () => {
 		const position = window.scrollY;
@@ -28,6 +31,16 @@ export const Navbar = () => {
 		})();
 	}, [lang]);
 
+	const toogleSidebar = React.useCallback(() => {
+		const element = document.getElementById("sidebar");
+		const classList = element?.classList!;
+		if (classList.contains("sidebar-container")) {
+			classList.remove("sidebar-container");
+		} else {
+			classList.add("sidebar-container");
+		}
+	}, []);
+
 	React.useEffect(() => {
 		window.addEventListener("scroll", scrollHandler);
 	}, []);
@@ -38,6 +51,9 @@ export const Navbar = () => {
 				isScroll ? "navbar-container scrolled" : "navbar-container"
 			}
 		>
+			<div className="menu-icon-container" onClick={toogleSidebar}>
+				<img src={menuIcon} alt="...loading" />
+			</div>
 			<img id="logo-image" src={logo} alt="...loading" />
 			<div className="navbar-content">
 				<nav>
@@ -51,20 +67,29 @@ export const Navbar = () => {
 											.getElementById("about")
 											?.scrollIntoView();
 									}
+									setSelectedIndex(value.index);
 								}}
+								className={
+									selectedIndex === value.index
+										? "li-active"
+										: "li-not-active"
+								}
 							>
 								{value.label}
 							</li>
 						))}
-						<li>
-							<img src={searchIcon} alt="...loading" />
-						</li>
 					</ol>
 				</nav>
 			</div>
-			<div className="button-container">
+			<div className="navbar-button-container">
 				<ButtonLanguageSelect />
 			</div>
+			<Sidebar
+				valuesNavbar={valuesNavbar}
+				setSelectedIndex={setSelectedIndex}
+				selectedIndex={selectedIndex}
+				toogleSidebar={toogleSidebar}
+			/>
 		</div>
 	) : (
 		<></>

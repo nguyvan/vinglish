@@ -1,4 +1,4 @@
-import React from "react";
+import React, { CSSProperties } from "react";
 import ENGFlag from "../../assets/svg/eng-flag.svg";
 import VNFlag from "../../assets/svg/vn-flag.svg";
 import { LangContextProps } from "../../types/context.type";
@@ -20,7 +20,14 @@ const languageButtons = [
 	},
 ];
 
-export const ButtonLanguageSelect = () => {
+interface ButtonLanguageSelectProps {
+	styles?: {
+		container: CSSProperties;
+		selections: CSSProperties;
+	};
+}
+
+export const ButtonLanguageSelect = ({ styles }: ButtonLanguageSelectProps) => {
 	const { lang, setLang } = React.useContext<LangContextProps>(LangContext);
 	const [isSelecting, setIsSelecting] = React.useState<boolean>(false);
 
@@ -34,14 +41,17 @@ export const ButtonLanguageSelect = () => {
 	}, []);
 
 	return lang ? (
-		<div className="button-lang-container">
+		<div className="button-lang-container" style={styles?.container}>
 			<div className="button-lang-selected" onClick={toogleSelectLang}>
 				<img src={selectedLang!.flag} alt="...loading" />
 				<span>{selectedLang!.label}</span>
 			</div>
 
 			{isSelecting ? (
-				<div className="button-lang-selection">
+				<div
+					className="button-lang-selection"
+					style={styles?.selections}
+				>
 					{languageButtons.map((language) => (
 						<div
 							key={language.value}

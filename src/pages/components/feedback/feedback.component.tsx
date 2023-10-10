@@ -12,8 +12,19 @@ export const Feedback = () => {
 	const { lang } = React.useContext<LangContextProps>(LangContext);
 	const [direction, setDirection] = React.useState<string>("");
 	const [offset, setOffset] = React.useState<number>(0);
+	const [limit, setLimit] = React.useState<number>(feedbackLimit);
+
 	const [feedbackValues, setFeedBackValues] =
 		React.useState<FeedbackValuesProps>();
+
+	const changeLimit = React.useCallback(() => {
+		if (window.innerWidth > 768) {
+			setLimit(feedbackLimit);
+		} else {
+			setLimit(2);
+		}
+		setOffset(0);
+	}, []);
 
 	const length = React.useMemo(() => {
 		if (feedbackValues) {
@@ -24,11 +35,11 @@ export const Feedback = () => {
 	const selectedItems = React.useMemo(() => {
 		if (feedbackValues) {
 			return feedbackValues.content.slice(
-				offset * feedbackLimit,
-				(offset + 1) * feedbackLimit
+				offset * limit,
+				(offset + 1) * limit
 			);
 		}
-	}, [feedbackValues, offset]);
+	}, [limit, offset, feedbackValues]);
 
 	const slideVariants: Variants = {
 		hiddenRight: {
@@ -65,6 +76,13 @@ export const Feedback = () => {
 		})();
 	}, [lang]);
 
+	React.useEffect(() => {
+		window.addEventListener("resize", changeLimit);
+		return () => {
+			window.removeEventListener("resize", changeLimit);
+		};
+	}, [changeLimit]);
+
 	return feedbackValues ? (
 		<div className="feedback-container">
 			<div className="feedback-overlay" />
@@ -77,9 +95,7 @@ export const Feedback = () => {
 						setOffset((offset) => {
 							if (length) {
 								if (offset - 1 < 0) {
-									return (
-										Math.ceil(length / feedbackLimit) - 1
-									);
+									return Math.ceil(length / limit) - 1;
 								} else {
 									return offset - 1;
 								}
@@ -97,10 +113,7 @@ export const Feedback = () => {
 						setDirection("right");
 						setOffset((offset) => {
 							if (length) {
-								if (
-									offset + 1 >=
-									Math.floor(length / feedbackLimit)
-								) {
+								if (offset + 1 >= Math.floor(length / limit)) {
 									return 0;
 								} else {
 									return offset + 1;
@@ -118,7 +131,7 @@ export const Feedback = () => {
 						selectedItems.map((item, index) => (
 							<motion.div
 								className="carousel-item"
-								key={index + offset * feedbackLimit}
+								key={index + offset * limit}
 								initial={
 									direction === "right"
 										? "hiddenRight"

@@ -28,48 +28,150 @@
 		overflow: hidden;
 		white-space: nowrap;
 		animation: bannermove 15s linear infinite;
-		.logo-image {
-			margin-right: 10px;
-		}
-		.dot {
-			display: flex;
-			width: 7px;
-			height: 7px;
-			border-radius: 50%;
-			background-color: white;
-			margin-right: 20px;
-			margin-top: 20px;
-		}
-		.coffee-and-more-container {
+		.banner2-width {
 			display: flex;
 			flex-direction: row;
-			margin-top: 20px;
-			.coffee {
-				font-family: "Montserrat";
-				font-style: normal;
-				font-weight: 600;
-				font-size: 20px;
-				text-align: justify;
-				color: #ffffff;
-				margin-right: 5px;
+			width: calc((100% - 40px) / 3);
+			justify-content: center;
+			overflow: hidden;
+			align-items: center;
+			margin-right: 20px;
+			.logo-image {
+				width: calc((100% - 40px) / 3);
+				aspect-ratio: 172 / 51;
+				margin-right: 20px;
 			}
-			.and {
-				font-family: "Baskerville";
-				font-style: normal;
-				font-weight: 400;
-				font-size: 20px;
-				text-align: justify;
-				color: #ffffff;
-				margin-right: 5px;
+			.dot-container {
+				display: flex;
+				flex-direction: row;
+				align-items: center;
+				justify-content: flex-start;
+				margin-top: 10px;
+				.dot {
+					display: flex;
+					width: 7px;
+					height: 7px;
+					border-radius: 50%;
+					background-color: white;
+					margin-right: 20px;
+				}
+				.coffee-and-more-container {
+					display: flex;
+					flex-direction: row;
+					align-items: center;
+					margin-right: 10px;
+					max-width: calc((100% - 20px) / 3);
+					.coffee {
+						font-family: "Montserrat";
+						font-style: normal;
+						font-weight: 600;
+						font-size: 20px;
+						text-align: justify;
+						color: #ffffff;
+						margin-right: 5px;
+					}
+					.and {
+						font-family: "Baskerville";
+						font-style: normal;
+						font-weight: 400;
+						font-size: 20px;
+						text-align: justify;
+						color: #ffffff;
+						margin-right: 5px;
+					}
+					.more {
+						font-family: "Baskerville";
+						font-style: normal;
+						font-weight: 400;
+						font-size: 20px;
+						text-align: justify;
+						color: #ffffff;
+						font-style: italic;
+					}
+				}
 			}
-			.more {
-				font-family: "Baskerville";
-				font-style: normal;
-				font-weight: 400;
-				font-size: 20px;
-				text-align: justify;
-				color: #ffffff;
-				font-style: italic;
+		}
+	}
+}
+
+@media screen and (min-width: 880px) and (max-width: 1180px) {
+	.banner2-container {
+		.banner2-animation {
+			.banner2-width {
+				.logo-image {
+					width: calc((100% - 30px) / 3);
+					aspect-ratio: 172 / 51;
+				}
+				.dot-container {
+					.coffee-and-more-container {
+						.coffee {
+							font-size: 15px;
+						}
+						.and {
+							font-size: 15px;
+						}
+						.more {
+							font-size: 15px;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@media screen and (min-width: 768px) and (max-width: 880px) {
+	.banner2-container {
+		.banner2-animation {
+			.banner2-width {
+				.logo-image {
+					width: calc((100% - 40px) / 3);
+					aspect-ratio: 172 / 51;
+				}
+				.dot-container {
+					margin-top: 5px;
+					.coffee-and-more-container {
+						.coffee {
+							font-size: 15px;
+						}
+						.and {
+							font-size: 15px;
+						}
+						.more {
+							font-size: 15px;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.banner2-container {
+		.banner2-animation {
+			.banner2-width {
+				.logo-image {
+					display: none;
+				}
+				.dot-container {
+					margin-top: 0px;
+					width: 100%;
+					.dot {
+						display: none;
+					}
+					.coffee-and-more-container {
+						.coffee {
+							font-size: 12px;
+						}
+						.and {
+							font-size: 12px;
+						}
+						.more {
+							font-size: 12px;
+						}
+					}
+				}
 			}
 		}
 	}

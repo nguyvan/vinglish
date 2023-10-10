@@ -27,50 +27,64 @@ export const Footer = () => {
 
 	return footerValues ? (
 		<div id="footer">
-			<div className="left-part-container">
-				<img src={logo} className="logo" alt="...loading" />
-				<div className="info-container">
-					<span className="label">{footerValues.adress.label}:</span>
-					<span className="content-label">
-						{footerValues.adress.content}
-					</span>
-				</div>
-				<div className="info-container">
-					<span className="label">{footerValues.hotline.label}:</span>
-					<span className="content-label">
-						{footerValues.hotline.content}
-					</span>
-				</div>
-			</div>
-			<div className="right-part-container">
-				<div className="intro-service-container">
-					<div className="intro-service-content-container">
-						<span className="title">
-							{footerValues.introduction.label}
-						</span>
-						{footerValues.introduction.content.map((val, ind) => (
-							<span className="subtitle" key={ind}>
-								{val}
-							</span>
-						))}
+			<img id="logo-cached" src={logo} alt="...loading" />
+			<div className="footer-container">
+				<div className="left-part-container">
+					<img src={logo} className="logo" alt="...loading" />
+					<div className="info-container">
+						<div className="label">
+							{footerValues.adress.label}:
+						</div>
+						<div className="content-label">
+							{footerValues.adress.content}
+						</div>
 					</div>
-					<div className="intro-service-content-container">
-						<span className="title">
-							{footerValues.service.label}
-						</span>
-						{footerValues.service.content.map((val, ind) => (
-							<span className="subtitle" key={ind}>
-								{val}
-							</span>
-						))}
+					<div className="info-container">
+						<div className="label">
+							{footerValues.hotline.label}:
+						</div>
+						<div
+							className="content-label"
+							style={{ textDecoration: "underline" }}
+						>
+							{footerValues.hotline.content}
+						</div>
 					</div>
 				</div>
-				<div className="follow-us-container">
-					<span className="follow-us-title">FOLLOW US</span>
-					<img src={FBIcon} alt="...loading" />
-					<img src={INSTAIcon} alt="...loading" />
-					<img src={TIKTOKIcon} alt="...loading" />
-					<img src={YOUTUBEIcon} alt="...loading" />
+				<div className="right-part-container">
+					<div className="intro-service-container">
+						<div className="intro-service-content-container">
+							<span className="title">
+								{footerValues.introduction.label}
+							</span>
+							{footerValues.introduction.content.map(
+								(val, ind) => (
+									<span className="subtitle" key={ind}>
+										{val}
+									</span>
+								)
+							)}
+						</div>
+						<div className="intro-service-content-container">
+							<span className="title">
+								{footerValues.service.label}
+							</span>
+							{footerValues.service.content.map((val, ind) => (
+								<span className="subtitle" key={ind}>
+									{val}
+								</span>
+							))}
+						</div>
+					</div>
+					<div className="follow-us-container">
+						<span className="follow-us-title">FOLLOW US</span>
+						<div className="icon-container">
+							<img src={FBIcon} alt="...loading" />
+							<img src={INSTAIcon} alt="...loading" />
+							<img src={TIKTOKIcon} alt="...loading" />
+							<img src={YOUTUBEIcon} alt="...loading" />
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>

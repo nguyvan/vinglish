@@ -1,104 +1,135 @@
 #footer {
 	display: flex;
-	flex-direction: row;
+	flex-direction: column;
 	align-items: center;
 	justify-content: space-between;
+	max-width: 100vw;
+	overflow-x: hidden;
 	padding-left: 10%;
 	padding-right: 10%;
 	background: linear-gradient(0deg, #1e1e1e, #1e1e1e), #1e1e1e;
 	padding-top: 3%;
 	padding-bottom: 3%;
 	position: relative;
-	.left-part-container {
-		height: 60%;
-		width: 40%;
-		display: flex;
-		flex-direction: column;
-		align-items: flex-start;
-		justify-content: space-between;
+	color: #fff;
+	#logo-cached {
+		display: none;
 	}
-	img.logo {
-		width: 50%;
-		object-fit: contain;
-	}
-	.info-container {
+	.footer-container {
 		display: flex;
 		flex-direction: row;
-		margin-left: 4%;
-		align-items: flex-end;
-	}
-	span {
-		color: #fff;
-	}
-	.label {
-		font-family: "Be Vietnam Pro";
-		font-size: 12px;
-		font-weight: 700;
-		line-height: 19px;
-		letter-spacing: 0em;
-		margin-right: 5px;
-	}
-	.content-label {
-		font-family: "Be Vietnam Pro";
-		font-size: 10px;
-		font-weight: 400;
-		line-height: 16px;
-		letter-spacing: 0em;
-	}
-	.right-part-container {
-		height: 100%;
-		width: 20%;
-		display: flex;
-		flex-direction: column;
-		align-items: flex-start;
-		justify-content: space-between;
-	}
-	.intro-service-container {
 		width: 100%;
-		display: flex;
-		flex-direction: row;
-		align-items: flex-start;
-		justify-content: space-between;
-	}
-	.intro-service-content-container {
-		display: flex;
-		flex-direction: column;
-	}
-	.title {
-		font-family: "Be Vietnam Pro";
-		font-size: 15px;
-		font-weight: 800;
-		line-height: 19px;
-		letter-spacing: 0em;
-		padding-bottom: 5%;
-	}
-	.subtitle {
-		font-family: "Be Vietnam Pro";
-		font-size: 12px;
-		font-weight: 400;
-		line-height: 22px;
-		letter-spacing: 0em;
-		text-align: left;
-		padding-bottom: 1%;
-		&:last-child {
-			margin-bottom: 0px;
-		}
-	}
-	.follow-us-title {
-		font-family: "Be Vietnam Pro";
-		font-size: 15px;
-		font-weight: 800;
-		line-height: 19px;
-		letter-spacing: 0em;
-		text-align: left;
-	}
-	.follow-us-container {
-		width: 100%;
-		display: flex;
-		flex-direction: row;
 		align-items: center;
 		justify-content: space-between;
-		margin-top: 8%;
+		padding-top: 3%;
+		padding-bottom: 3%;
+		position: relative;
+		color: #fff;
+		.left-part-container {
+			width: 50%;
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+			justify-content: space-between;
+			img.logo {
+				width: 50%;
+				object-fit: contain;
+			}
+			.info-container {
+				display: flex;
+				flex-direction: row;
+				margin-left: 4%;
+				align-items: center;
+				margin-bottom: 10px;
+				&:last-child {
+					margin-bottom: 0px;
+				}
+				.label {
+					display: flex;
+					font-family: "Be Vietnam Pro";
+					font-size: 12px;
+					font-weight: 700;
+					letter-spacing: 0em;
+					margin-right: 5px;
+				}
+				.content-label {
+					display: flex;
+					font-family: "Be Vietnam Pro";
+					font-size: 10px;
+					font-weight: 400;
+					letter-spacing: 0em;
+				}
+			}
+		}
+		.right-part-container {
+			height: 100%;
+			width: 20%;
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+			justify-content: space-between;
+			.intro-service-container {
+				width: 100%;
+				display: flex;
+				flex-direction: row;
+				align-items: flex-start;
+				justify-content: space-between;
+				.intro-service-content-container {
+					display: flex;
+					flex-direction: column;
+					.title {
+						font-family: "Be Vietnam Pro";
+						font-size: 15px;
+						font-weight: 800;
+						line-height: 19px;
+						letter-spacing: 0em;
+						padding-bottom: 5%;
+					}
+					.subtitle {
+						font-family: "Be Vietnam Pro";
+						font-size: 12px;
+						font-weight: 400;
+						line-height: 22px;
+						letter-spacing: 0em;
+						text-align: left;
+						padding-bottom: 1%;
+						&:last-child {
+							margin-bottom: 0px;
+						}
+					}
+				}
+			}
+			.follow-us-container {
+				width: 100%;
+				display: flex;
+				flex-direction: row;
+				align-items: center;
+				justify-content: space-between;
+				margin-top: 8%;
+				.follow-us-title {
+					font-family: "Be Vietnam Pro";
+					font-size: 15px;
+					font-weight: 800;
+					line-height: 19px;
+					letter-spacing: 0em;
+					text-align: left;
+				}
+				.icon-container {
+					display: flex;
+					flex-wrap: wrap;
+					flex-direction: row;
+					justify-content: center;
+					align-items: center;
+					img {
+						margin-right: 8px;
+						cursor: pointer;
+						&:last-of-type {
+							margin-right: 0;
+						}
+					}
+				}
+			}
+		}
 	}
 }
 
@@ -126,5 +157,119 @@
 	}
 	.label {
 		font-weight: 700;
+	}
+}
+
+@media screen and (min-width: 880px) and (max-width: 1180px) {
+	#footer {
+		.footer-container {
+			.left-part-container {
+				.info-container {
+					align-items: flex-start;
+					.label {
+						font-size: 12px;
+						line-height: 14px;
+					}
+					.content-label {
+						line-height: 12px;
+						font-size: 10px;
+					}
+				}
+			}
+			.right-part-container {
+				width: 40%;
+			}
+		}
+	}
+}
+
+@media screen and (min-width: 768px) and (max-width: 880px) {
+	#footer {
+		.footer-container {
+			.left-part-container {
+				.info-container {
+					align-items: flex-start;
+					.label {
+						font-size: 12px;
+						line-height: 14px;
+					}
+					.content-label {
+						line-height: 12px;
+						font-size: 10px;
+					}
+				}
+			}
+			.right-part-container {
+				width: 40%;
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 768px) {
+	#footer {
+		padding-left: 0;
+		padding-right: 0;
+		#logo-cached {
+			display: flex;
+			width: 100px;
+			object-fit: contain;
+		}
+		.footer-container {
+			.left-part-container {
+				width: 30%;
+				margin-right: 5px;
+				img.logo {
+					display: none;
+					width: 100px;
+					object-fit: contain;
+				}
+				.info-container {
+					align-items: flex-start;
+					.label {
+						font-size: 10px;
+						line-height: 12px;
+					}
+					.content-label {
+						line-height: 10px;
+						font-size: 8px;
+					}
+				}
+			}
+			.right-part-container {
+				width: 60%;
+				margin-right: 5px;
+				.intro-service-container {
+					.intro-service-content-container {
+						.title {
+							font-size: 12px;
+							line-height: auto;
+							padding: 2px;
+						}
+						.subtitle {
+							font-size: 10px;
+							padding: 2px;
+							line-height: auto;
+							width: 100%;
+							word-break: break-word;
+						}
+					}
+				}
+				.follow-us-container {
+					flex-direction: column;
+					align-items: flex-start;
+					.follow-us-title {
+						font-size: 12px;
+						line-height: 15px;
+						margin-bottom: 5px;
+					}
+					.icon-container {
+						img {
+							margin-right: 5px;
+						}
+					}
+				}
+			}
+		}
 	}
 }

@@ -94,3 +94,47 @@
 		}
 	}
 }
+
+@media screen and (min-width: 880px) and (max-width: 1180px) {
+	.why-container {
+		h1 {
+			font-size: 36px;
+		}
+	}
+}
+
+@media screen and (min-width: 768px) and (max-width: 880px) {
+	.why-container {
+		h1 {
+			font-size: 36px;
+		}
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.why-container {
+		h1 {
+			font-size: 20px;
+		}
+		.why-flatlist {
+			width: 80%;
+			gap: 20px 20px;
+			.why-item {
+				width: calc((100% - 20px) / 2 - 40px);
+				padding: 10px 20px;
+				.why-item-label {
+					font-size: 12px;
+					margin-bottom: 10px;
+				}
+				.why-item-text {
+					font-size: 9px;
+				}
+			}
+		}
+		button {
+			div {
+				font-size: 12px;
+			}
+		}
+	}
+}

@@ -6,7 +6,11 @@
 	flex-direction: row;
 	align-items: flex-end;
 	background-color: "transparent";
-	z-index: 9999;
+	z-index: 1000;
+
+	.menu-icon-container {
+		display: none;
+	}
 
 	#logo-image {
 		position: absolute;
@@ -23,7 +27,7 @@
 			ol {
 				list-style-type: none;
 				padding-left: 0;
-				li {
+				.li-not-active {
 					display: inline-block;
 					margin-right: 30px;
 					font-family: "Be Vietnam Pro";
@@ -34,9 +38,6 @@
 					color: white;
 					&:last-child {
 						margin-right: 0px;
-					}
-					&:last-child:after {
-						display: none;
 					}
 					&:after {
 						display: block;
@@ -51,10 +52,32 @@
 						transform: scaleX(1);
 					}
 				}
+				.li-active {
+					display: inline-block;
+					margin-right: 30px;
+					font-family: "Be Vietnam Pro";
+					font-style: normal;
+					font-weight: 500;
+					font-size: 15px;
+					cursor: pointer;
+					color: white;
+					&:last-child {
+						margin-right: 0px;
+					}
+					&:after {
+						display: block;
+						content: "";
+						padding-bottom: 5px;
+						border-bottom: solid 3px #019fb6;
+						transform: scaleX(1);
+						transition: transform 1s ease-in-out;
+						transform-origin: 0% 50%;
+					}
+				}
 			}
 		}
 	}
-	.button-container {
+	.navbar-button-container {
 		position: absolute;
 		right: 50px;
 		top: 50%;
@@ -65,4 +88,75 @@
 .navbar-container.scrolled {
 	background-color: #000 !important;
 	transition: background-color 200ms linear;
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1200px) {
+	.navbar-container {
+		#logo-image {
+			left: 0%;
+		}
+		.navbar-content {
+			left: 25%;
+		}
+		.navbar-button-container {
+			right: 10px;
+		}
+	}
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+	.navbar-container {
+		.menu-icon-container {
+			display: flex;
+			position: absolute;
+			top: 50%;
+			left: 20px;
+			transform: translate(0, -50%);
+			cursor: pointer;
+			img {
+				width: 28px;
+				height: 24px;
+			}
+		}
+		#logo-image {
+			left: unset;
+			right: 10px;
+		}
+		.navbar-content {
+			display: none;
+		}
+		.navbar-button-container {
+			display: none;
+		}
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.navbar-container {
+		.menu-icon-container {
+			display: flex;
+			position: absolute;
+			top: 50%;
+			left: 20px;
+			transform: translate(0, -50%);
+			cursor: pointer;
+			img {
+				width: 21px;
+				height: 18px;
+			}
+		}
+		#logo-image {
+			width: 100px;
+			object-fit: contain;
+			aspect-ratio: 172 / 51;
+			left: unset;
+			right: 10px;
+		}
+		.navbar-content {
+			display: none;
+		}
+		.navbar-button-container {
+			display: none;
+		}
+	}
 }

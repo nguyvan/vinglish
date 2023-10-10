@@ -57,3 +57,33 @@
 		z-index: 2;
 	}
 }
+
+@media screen and (min-width: 880px) and (max-width: 1180px) {
+	.banner-container {
+		.banner-label {
+			font-size: 32px;
+		}
+	}
+}
+
+@media screen and (min-width: 768px) and (max-width: 880px) {
+	.banner-container {
+		.banner-label {
+			top: 10%;
+			left: 5%;
+			max-width: 25%;
+			font-size: 32px;
+		}
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.banner-container {
+		.banner-label {
+			top: 10%;
+			left: 5%;
+			max-width: 30%;
+			font-size: 12px;
+		}
+	}
+}

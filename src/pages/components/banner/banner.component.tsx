@@ -15,27 +15,25 @@ export const Banner2 = () => {
 		<div className="banner2-container">
 			{[...Array(3)].map((_, index) => (
 				<div className="banner2-animation" key={index}>
-					<img src={logo} alt="...loading" className="logo-image" />
-					<div className="dot" />
-					<div className="coffee-and-more-container">
-						<span className="coffee">Coffee English</span>
-						<span className="and">&</span>
-						<span className="more">more</span>
-					</div>
-					<img src={logo} alt="...loading" className="logo-image" />
-					<div className="dot" />
-					<div className="coffee-and-more-container">
-						<span className="coffee">Coffee English</span>
-						<span className="and">&</span>
-						<span className="more">more</span>
-					</div>
-					<img src={logo} alt="...loading" className="logo-image" />
-					<div className="dot" />
-					<div className="coffee-and-more-container">
-						<span className="coffee">Coffee English</span>
-						<span className="and">&</span>
-						<span className="more">more</span>
-					</div>
+					{[...Array(3)].map((_, ind) => (
+						<div className="banner2-width" key={ind}>
+							<img
+								src={logo}
+								alt="...loading"
+								className="logo-image"
+							/>
+							<div className="dot-container">
+								<div className="dot" />
+								<div className="coffee-and-more-container">
+									<span className="coffee">
+										Coffee English
+									</span>
+									<span className="and">&</span>
+									<span className="more">more</span>
+								</div>
+							</div>
+						</div>
+					))}
 				</div>
 			))}
 		</div>
