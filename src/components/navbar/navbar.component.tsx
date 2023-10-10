@@ -66,6 +66,10 @@ export const Navbar = () => {
 										document
 											.getElementById("about")
 											?.scrollIntoView();
+									} else if (value.index === 5) {
+										window.location.replace(
+											"https://booking.vinglishcoffee.com"
+										);
 									}
 									setSelectedIndex(value.index);
 								}}
