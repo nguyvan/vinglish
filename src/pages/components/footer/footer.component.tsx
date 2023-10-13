@@ -79,10 +79,51 @@ export const Footer = () => {
 					<div className="follow-us-container">
 						<span className="follow-us-title">FOLLOW US</span>
 						<div className="icon-container">
-							<img src={FBIcon} alt="...loading" />
-							<img src={INSTAIcon} alt="...loading" />
-							<img src={TIKTOKIcon} alt="...loading" />
-							<img src={YOUTUBEIcon} alt="...loading" />
+							<img
+								src={FBIcon}
+								alt="...loading"
+								onClick={() => {
+									let url =
+										"https://www.facebook.com/VinglishCoffee";
+									window.open(url, "_blank")?.focus();
+								}}
+							/>
+							<img
+								src={INSTAIcon}
+								alt="...loading"
+								onClick={() => {
+									window
+										.open(
+											"https://www.instagram.com/vinglishcoffee/",
+											"_blank"
+										)
+										?.focus();
+								}}
+							/>
+							<img
+								src={TIKTOKIcon}
+								alt="...loading"
+								onClick={() => {
+									window
+										.open(
+											"https://www.tiktok.com/@vinglishcoffee",
+											"_blank"
+										)
+										?.focus();
+								}}
+							/>
+							<img
+								src={YOUTUBEIcon}
+								alt="...loading"
+								onClick={() => {
+									window
+										.open(
+											"https://www.youtube.com/@vinglishcoffee",
+											"_blank"
+										)
+										?.focus();
+								}}
+							/>
 						</div>
 					</div>
 				</div>

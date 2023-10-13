@@ -42,8 +42,12 @@ export const navbar = [
 		index: 4,
 	},
 	{
-		label: "Đặt Phòng Họp",
+		label: "Tuyển dụng",
 		index: 5,
+	},
+	{
+		label: "Đặt Phòng Họp",
+		index: 6,
 	},
 ];
 

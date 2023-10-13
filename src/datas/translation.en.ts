@@ -42,8 +42,12 @@ export const navbar = [
 		index: 4,
 	},
 	{
-		label: "Booking Meeting Room",
+		label: "Recruitment",
 		index: 5,
+	},
+	{
+		label: "Booking Meeting Room",
+		index: 6,
 	},
 ];
 
