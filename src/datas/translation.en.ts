@@ -41,13 +41,13 @@ export const navbar = [
 		label: "Latest News",
 		index: 4,
 	},
-	{
-		label: "Recruitment",
-		index: 5,
-	},
+	// {
+	// 	label: "Recruitment",
+	// 	index: 5,
+	// },
 	{
 		label: "Booking Meeting Room",
-		index: 6,
+		index: 5,
 	},
 ];
 

@@ -41,13 +41,13 @@ export const navbar = [
 		label: "Tin Mới Nhất",
 		index: 4,
 	},
-	{
-		label: "Tuyển dụng",
-		index: 5,
-	},
+	// {
+	// 	label: "Tuyển dụng",
+	// 	index: 5,
+	// },
 	{
 		label: "Đặt Phòng Họp",
-		index: 6,
+		index: 5,
 	},
 ];
 

@@ -33,7 +33,7 @@ export const Sidebar = ({
 										document
 											.getElementById("about")
 											?.scrollIntoView();
-									} else if (value.index === 6) {
+									} else if (value.index === 5) {
 										window.location.replace(
 											"https://booking.vinglishcoffee.com"
 										);
