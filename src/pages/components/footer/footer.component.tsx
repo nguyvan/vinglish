@@ -137,7 +137,7 @@ export const Footer = () => {
 export const Copyright = () => {
 	const { lang } = React.useContext<LangContextProps>(LangContext);
 	const [copyrightValue, setCopyrightValue] = React.useState<string>("");
-	const WEBNAME = "vinglishcoffee.vn";
+	const WEBNAME = "vinglishcoffee.com";
 
 	React.useEffect(() => {
 		switch (lang) {
