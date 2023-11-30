@@ -72,9 +72,7 @@ export const Navbar = () => {
 								key={value.index}
 								onClick={() => {
 									if (value.index === 1) {
-										document
-											.getElementById("about")
-											?.scrollIntoView();
+										window.location.href = "#about";
 									} else if (value.index === 5) {
 										window.location.replace(
 											"https://booking.vinglishcoffee.com"

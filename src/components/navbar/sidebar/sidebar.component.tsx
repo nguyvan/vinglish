@@ -30,15 +30,15 @@ export const Sidebar = ({
 								key={value.index}
 								onClick={() => {
 									if (value.index === 1) {
-										document
-											.getElementById("about")
-											?.scrollIntoView();
+										window.location.href = "#about";
 									} else if (value.index === 5) {
 										window.location.replace(
 											"https://booking.vinglishcoffee.com"
 										);
 									} else if (value.index === 2) {
 										window.location.href = "#menu";
+									} else if (value.index === 4) {
+										window.location.href = "/news";
 									}
 									setSelectedIndex!(value.index);
 								}}
