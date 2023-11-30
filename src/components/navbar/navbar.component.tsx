@@ -41,6 +41,10 @@ export const Navbar = () => {
 		}
 	}, []);
 
+	const navigateToHome = React.useCallback(() => {
+		window.location.href = "/";
+	}, []);
+
 	React.useEffect(() => {
 		window.addEventListener("scroll", scrollHandler);
 	}, []);
@@ -54,7 +58,12 @@ export const Navbar = () => {
 			<div className="menu-icon-container" onClick={toogleSidebar}>
 				<img src={menuIcon} alt="...loading" />
 			</div>
-			<img id="logo-image" src={logo} alt="...loading" />
+			<img
+				id="logo-image"
+				src={logo}
+				alt="...loading"
+				onClick={navigateToHome}
+			/>
 			<div className="navbar-content">
 				<nav>
 					<ol>
