@@ -72,6 +72,8 @@ export const Navbar = () => {
 										);
 									} else if (value.index === 2) {
 										window.location.href = "#menu";
+									} else if (value.index === 4) {
+										window.location.href = "/news";
 									}
 									setSelectedIndex(value.index);
 								}}
